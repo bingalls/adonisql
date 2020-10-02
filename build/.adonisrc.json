@@ -1,0 +1,29 @@
+{
+  "typescript": false,
+  "commands": [
+    "./commands",
+    "@adonisjs/core/build/commands",
+    "@adonisjs/lucid/build/commands"
+  ],
+  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "aliases": {
+    "App": "app",
+    "Contracts": "contracts",
+    "Config": "config",
+    "Database": "database"
+  },
+  "preloads": [
+    "./start/routes",
+    "./start/kernel"
+  ],
+  "providers": [
+    "./providers/AppProvider",
+    "@adonisjs/core",
+    "@adonisjs/lucid"
+  ],
+  "metaFiles": [
+    ".env",
+    ".adonisrc.json"
+  ],
+  "lastCompiledAt": "2020-10-02T00:37:05.260Z"
+}
