@@ -1,7 +1,8 @@
-node_modules
-build
-coverage
-.vscode
 .DS_STORE
 .env
+.idea/
+.vscode
+build
+coverage
+node_modules
 tmp

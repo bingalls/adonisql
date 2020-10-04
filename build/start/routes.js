@@ -5,12 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Route_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Core/Route"));
 Route_1.default.get('/', async () => {
-    return { hello: 'world' };
+    return 'Did you mean to open /graphiql';
 });
 const { graphiqlAdonis, graphqlAdonis } = require('apollo-server-adonis');
 const { makeExecutableSchema } = require('graphql-tools');
-const Database_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Lucid/Database"));
-let careers = Database_1.default.query().from('careers');
 const typeDefs = `
   type Career {
     email: String
@@ -25,18 +23,20 @@ const typeDefs = `
   }
 `;
 const Career_1 = __importDefault(global[Symbol.for('ioc.use')]("App/Models/Career"));
+const Database_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Lucid/Database"));
 const resolvers = {
     Query: {
-        careers: () => careers,
-        career: () => careers.paginate(1, 1),
+        careers: async () => await Database_1.default.query().from('careers'),
+        career: async () => await Database_1.default.query().from('careers').limit(1),
     },
     Mutation: {
-        createCareer: (root, args) => {
+        createCareer: async (root, args) => {
             void (root);
             const career = new Career_1.default();
             career.email = args.email.toString();
             career.description = args.description.toString();
-            career.save();
+            const result = await career.save();
+            return result.toString();
         },
     },
 };

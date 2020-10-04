@@ -21,17 +21,12 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return 'Did you mean to open /graphiql'
 })
 
 const { graphiqlAdonis, graphqlAdonis } = require('apollo-server-adonis')
 
 const { makeExecutableSchema } = require('graphql-tools')
-
-// database without async/await in router is too slow
-// move this code into a controller
-import Database from '@ioc:Adonis/Lucid/Database'
-let careers = Database.query().from('careers')
 
 // GraphQL schema in string form
 const typeDefs = `
@@ -49,18 +44,22 @@ const typeDefs = `
 `
 
 import Career from 'App/Models/Career'
+// move this code into a controller
+import Database from '@ioc:Adonis/Lucid/Database'
+
 const resolvers = {
   Query: {
-    careers: () => careers,
-    career: () => careers.paginate(1, 1),
+    careers: async () => await Database.query().from('careers'),
+    career: async () => await Database.query().from('careers').limit(1),
   },
   Mutation: {
-    createCareer: (root, args) => { //(root, args, context, info)
+    createCareer: async (root, args) => { //(root, args, context, info)
       void(root) // syntax sugar to lint unused param
       const career = new Career()
       career.email = args.email.toString()
       career.description = args.description.toString()
-      career.save()
+      const result = await career.save()
+      return result.toString()
     },
   },
 }
