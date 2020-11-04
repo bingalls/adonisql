@@ -8,25 +8,25 @@
     "lint": "eslint . --ext=.ts"
   },
   "devDependencies": {
-    "@adonisjs/assembler": "^2.1.5",
-    "adonis-preset-ts": "^1.0.4",
-    "eslint": "^7.9.0",
+    "@adonisjs/assembler": "^3.0.6",
+    "adonis-preset-ts": "^1.1.0",
+    "eslint": "^7.12.1",
     "eslint-plugin-adonis": "^1.0.15",
-    "pino-pretty": "^4.2.1",
-    "typescript": "^4.0.3",
-    "youch": "^2.0.10",
-    "youch-terminal": "^1.0.0"
+    "pino-pretty": "^4.3.0",
+    "typescript": "^4.0.5",
+    "youch": "^2.1.1",
+    "youch-terminal": "^1.0.1"
   },
   "dependencies": {
     "@adonisjs/ace": "^6.9.4",
-    "@adonisjs/application": "^2.0.0",
-    "@adonisjs/core": "^5.0.0-preview-rc-1.12",
+    "@adonisjs/application": "^3.0.20",
+    "@adonisjs/core": "^5.0.4-preview-rc",
     "@adonisjs/fold": "^6.4.1",
-    "@adonisjs/ioc-transformer": "^1.0.2",
+    "@adonisjs/ioc-transformer": "^1.0.3",
     "@adonisjs/lucid": "^8.4.4",
-    "apollo-server": "^2.18.1",
+    "apollo-server": "^2.19.0",
     "apollo-server-adonis": "^1.4.0",
-    "graphql-tools": "^6.2.3",
+    "graphql-tools": "^7.0.1",
     "luxon": "^1.25.0",
     "proxy-addr": "^2.0.6",
     "reflect-metadata": "^0.1.13",
@@ -34,6 +34,6 @@
     "sqlite3": "^5.0.0"
   },
   "volta": {
-    "node": "14.13.0"
+    "node": "14.15.0"
   }
 }

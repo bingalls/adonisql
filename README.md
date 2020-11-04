@@ -1,15 +1,16 @@
 # Adonis v5 GraphQL Starter
 See my Adonisql-spdr repo for the older Adonis v4 example.
-Adonis.js made a disruptive change to Typescript, breaking the v4 examples you might find.
+Adonis.js made a disruptive change to Typescript, breaking any v4 examples you might find.
 
 This is an example of a Careers site, where an email key posts a description.
 To keep it simple, this only provides 
 
 ## Requirements
-* nodejs > v13
+* nodejs v14.x LTS
+As of 2020-11, Node v15 is still too unstable.
 
 ### Recommended
-* [Volta](https://volta.sh/) Ensures correct node version. Also as `brew install volta`
+* [Volta](https://volta.sh/) Ensures correct node version. Available as `brew install volta`
 
 ## Setup
 
@@ -33,7 +34,7 @@ In the left graphiql window, try these example graphql statements
 * ` mutation{ createCareer(email: "email@example.com", description: "job description") } `
 
 ## Database Option
-Skip this section, if you are happy to keep sqlite
+Sqlite is the default database for development.
 Create empty database & grant permissions.
 Edit database configuration in .env
 
@@ -45,9 +46,16 @@ Run the following command to run startup migrations.
 cd adonisql
 node ace invoke @adonisjs/lucid   # select your database driver
 node ace build
+```
+If the following commands are available, run them. This section is impacted
+by Adonis v5 coming out of RC status.
+```bash
 node ace migration:run
 node ace db:seed
 ```
 ## Notice
 It might be necessary to disable CSRF in config/shield.js to allow the /graphiql development tool (i.e. route).
 Re-enable CSRF for production
+
+Npm package dependencies can be version sensitive. Upgrade carefully in
+small increments, and stay with Node LTS versions.
