@@ -25,44 +25,10 @@ Route.get('/', async () => {
 })
 
 const { graphiqlAdonis, graphqlAdonis } = require('apollo-server-adonis')
-
 const { makeExecutableSchema } = require('graphql-tools')
 
-// GraphQL schema in string form
-const typeDefs = `
-  type Career {
-    email: String
-    description: String
-  }
-  type Query {
-    careers: [Career]
-    career: [Career]
-  }
-  type Mutation {
-    createCareer(email: String, description: String): String
-  }
-`
-
-import Career from 'App/Models/Career'
-// move this code into a controller
-import Database from '@ioc:Adonis/Lucid/Database'
-
-const resolvers = {
-  Query: {
-    careers: async () => await Database.query().from('careers'),
-    career: async () => await Database.query().from('careers').limit(1),
-  },
-  Mutation: {
-    createCareer: async (root, args) => { //(root, args, context, info)
-      void(root) // syntax sugar to lint unused param
-      const career = new Career()
-      career.email = args.email.toString()
-      career.description = args.description.toString()
-      const result = await career.save()
-      return result.toString()
-    },
-  },
-}
+import resolvers from 'App/data/resolvers'
+import typeDefs from 'App/data/schema'
 
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
