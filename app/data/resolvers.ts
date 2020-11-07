@@ -1,7 +1,7 @@
 import Career from 'App/Models/Career'
 import Database from '@ioc:Adonis/Lucid/Database'
 
-interface ArgType {
+interface CareerSchema {
   readonly description: string
   readonly email: string
 }
@@ -12,7 +12,7 @@ const resolvers = {
     career: async () => await Database.query().from('careers').limit(1),
   },
   Mutation: {
-    createCareer: async (root :any, args: ArgType) => { //(root, args, context, info)
+    createCareer: async (root :any, args: CareerSchema) => { //(root, args, context, info)
       void(root) // syntax sugar to lint unused param
       const career = new Career()
       career.email = args.email.toString()

@@ -59,3 +59,8 @@ Re-enable CSRF for production
 
 Npm package dependencies can be version sensitive. Upgrade carefully in
 small increments, and stay with Node LTS versions.
+
+Adonisjs v5 rc does not yet support unit test creation.
+[A v4 TDD tutorial may help you
+](https://dev.to/michi/tdd-course-with-adonisjs-1-let-s-build-a-simple-forum-199)
+
