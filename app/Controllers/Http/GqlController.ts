@@ -6,14 +6,8 @@ const { graphqlAdonis } = require('apollo-server-adonis')
 const { makeExecutableSchema } = require('graphql-tools')
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
-export default class GraphqlController {
-  public get (): typeof Response {
-    return graphqlAdonis({
-      schema: schema,
-    })
-  }
-
-  public post (): typeof Response {
+export default class GqlController {
+  public static post (): typeof Response {
     return graphqlAdonis({
       schema: schema,
     })

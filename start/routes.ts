@@ -22,9 +22,8 @@ Route.get('/', async () => {
   return 'Did you mean to open /graphiql'
 })
 
-import GraphqlController from 'App/Controllers/Http/GraphqlController'
+import GqlController from 'App/Controllers/Http/GqlController'
 import GraphiqlController from 'App/Controllers/Http/GraphiqlController'
 
-Route.get('graphql', new GraphqlController().get())
-Route.get('graphiql', new GraphiqlController().get())
-Route.post('graphql', new GraphqlController().post())
+Route.get('graphiql', GraphiqlController.get())
+Route.post('graphql', GqlController.post())

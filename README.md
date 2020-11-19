@@ -39,7 +39,6 @@ Create empty database & grant permissions.
 Edit database configuration in .env
 
 ### Migrations
-
 Run the following command to run startup migrations.
 
 ```bash
@@ -53,6 +52,16 @@ by Adonis v5 coming out of RC status.
 node ace migration:run
 node ace db:seed
 ```
+## How to Use
+Currently, this serves a simplistic example API for a job posting site, where 
+each posting has an email address & description.
+Change this to your need, by editing 
+* app/data/schema.ts
+* app/data/resolvers.ts
+After changing the name of your schema from Careers, update
+* app/Models/Career.ts
+* start/routes.ts
+
 ## Notice
 It might be necessary to disable CSRF in config/shield.js to allow the /graphiql development tool (i.e. route).
 Re-enable CSRF for production
