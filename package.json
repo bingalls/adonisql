@@ -1,6 +1,6 @@
 {
   "name": "adonisql",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "build": "node ace build",
@@ -32,6 +32,11 @@
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.19",
     "sqlite3": "^5.0.0"
+  },
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   },
   "volta": {
     "node": "14.15.0"

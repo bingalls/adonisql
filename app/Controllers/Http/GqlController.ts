@@ -1,13 +1,12 @@
+import { makeExecutableSchema } from 'graphql-tools'
 import resolvers from 'App/data/resolvers'
-// import Response from '@ioc:Adonis/Core/Response'
 import typeDefs from 'App/data/schema'
 
-const { graphqlAdonis } = require('apollo-server-adonis')
-const { makeExecutableSchema } = require('graphql-tools')
+const { AdonisHandler, graphqlAdonis } = require('apollo-server-adonis')
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 export default class GqlController {
-  public static post () {
+  public static post (): typeof AdonisHandler {
     return graphqlAdonis({
       schema: schema,
     })

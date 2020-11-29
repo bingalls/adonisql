@@ -22,8 +22,9 @@ Route.get('/', async () => {
   return 'Did you mean to open /graphiql'
 })
 
+import { graphiqlAdonis } from 'apollo-server-adonis'
 import GqlController from 'App/Controllers/Http/GqlController'
-import GraphiqlController from 'App/Controllers/Http/GraphiqlController'
 
-Route.get('graphiql', GraphiqlController.get())
+Route.get('graphiql', graphiqlAdonis({ endpointURL: '/graphql' }))
+// post() is called asynchronously internally, so this syntax is performant
 Route.post('graphql', GqlController.post())

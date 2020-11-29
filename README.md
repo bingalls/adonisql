@@ -2,15 +2,12 @@
 See my Adonisql-spdr repo for the older Adonis v4 example.
 Adonis.js made a disruptive change to Typescript, breaking any v4 examples you might find.
 
-This is an example of a Careers site, where an email key posts a description.
-To keep it simple, this only provides 
+This is a simple example of a Careers site, where an email key posts a description.
+Current v0.3 is stable, but awaits upgrade of Adonis testing library
 
 ## Requirements
-* nodejs v14.x LTS
-As of 2020-11, Node v15 is still too unstable.
-
-### Recommended
-* [Volta](https://volta.sh/) Ensures correct node version. Available as `brew install volta`
+* nodejs >= v14.x LTS
+* sqlite or other database
 
 ## Setup
 
@@ -37,6 +34,7 @@ In the left graphiql window, try these example graphql statements
 Sqlite is the default database for development.
 Create empty database & grant permissions.
 Edit database configuration in .env
+Note that env.ts type-checks your .env
 
 ### Migrations
 Run the following command to run startup migrations.
