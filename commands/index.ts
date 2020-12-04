@@ -1,5 +1,6 @@
-import { listDirectoryFiles } from '@adonisjs/ace'
+import { listDirectoryFiles } from '@adonisjs/core/build/standalone'
 import Application from '@ioc:Adonis/Core/Application'
+// import { BaseCommand } from '@adonisjs/core/build/standalone'
 
 /*
 |--------------------------------------------------------------------------

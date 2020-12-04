@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@adonisjs/application": "^3.0.21",
-    "@adonisjs/core": "^5.0.1",
+    "@adonisjs/core": "^5.0.4-preview-rc-2.1",
     "@adonisjs/ioc-transformer": "^1.0.3",
     "@adonisjs/lucid": "^8.5.0",
     "apollo-server": "^2.19.0",
