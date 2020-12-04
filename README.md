@@ -64,10 +64,13 @@ After changing the name of your schema from Careers, update
 It might be necessary to disable CSRF in config/shield.js to allow the /graphiql development tool (i.e. route).
 Re-enable CSRF for production
 
-Npm package dependencies can be version sensitive. Upgrade carefully in
-small increments, and stay with Node LTS versions.
-
-Adonisjs v5 rc does not yet support unit test creation.
-[A v4 TDD tutorial may help you
+Production v1 awaits configuring Adonisjs v5 Japa unit tests.
+* https://preview.adonisjs.com/blog/running-tests-in-adonisjs-v5
+* [A v4 TDD tutorial may help
 ](https://dev.to/michi/tdd-course-with-adonisjs-1-let-s-build-a-simple-forum-199)
 
+## See Also
+I had difficulties with these Apollo v5 service provider plugins. 
+Perhaps they are easier now:
+* https://github.com/sebastiandittrich/apollo-adonis
+* https://github.com/zakodium/adonis-apollo
