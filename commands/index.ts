@@ -17,4 +17,4 @@ import Application from '@ioc:Adonis/Core/Application'
 | 2. We must ignore this file.
 |
 */
-export default listDirectoryFiles(__dirname, Application.appRoot, ['./commands/index.js'])
+export default listDirectoryFiles(__dirname, Application.appRoot, ['./commands/index'])
