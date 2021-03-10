@@ -3,7 +3,8 @@
   "commands": [
     "./commands",
     "@adonisjs/core/build/commands",
-    "@adonisjs/lucid/build/commands"
+    "@adonisjs/lucid/build/commands",
+    "@adonisjs/repl/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
@@ -24,5 +25,8 @@
   "metaFiles": [
     ".env",
     ".adonisrc.json"
+  ],
+  "aceProviders": [
+    "@adonisjs/repl"
   ]
 }

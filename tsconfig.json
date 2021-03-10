@@ -24,7 +24,8 @@
     },
     "types": [
       "@adonisjs/core",
-      "@adonisjs/lucid"
+      "@adonisjs/lucid",
+      "@adonisjs/repl"
     ]
   }
 }
